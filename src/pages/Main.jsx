@@ -3,14 +3,12 @@ import { createRoot } from 'react-dom/client'
 import '../css/index.css'
 import Soon from '../components/Soon.jsx'
 import TypeInfo from '../components/TypeInfo.jsx'
-import ImgContainerOne from '../components/ImgContainer.jsx'
-import DragDrop from '../components/DragDrop.jsx'
+import ImgCntnr from '../components/DragDrop.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Soon />
     <TypeInfo />
-    {/* <ImgContainerOne /> */}
-    <DragDrop />
+    <ImgCntnr />
   </StrictMode>,
 )
