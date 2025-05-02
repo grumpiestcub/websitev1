@@ -48,4 +48,9 @@
   text-align: center;
 }
 
-
+img {
+  max-width: 350px;
+  max-height: 350px;
+  display: flex;
+  pointer-events: none;
+}
