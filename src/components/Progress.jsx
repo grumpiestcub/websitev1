@@ -1,4 +1,4 @@
-import '/Users/grumpiestcub/Desktop/code/websitev1/src/css/progress.css'
+import '../css/progress.css';
 import React, { useEffect, useState } from 'react';
 
 const Progress = ({
