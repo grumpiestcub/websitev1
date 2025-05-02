@@ -1,4 +1,4 @@
-import "/Users/grumpiestcub/Desktop/code/websitev1/src/css/App.css"
+import '../css/App.css';
 import TypeWriter from "typewriter-effect"
 
 function TypeInfo() {
