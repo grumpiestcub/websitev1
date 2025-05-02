@@ -11,12 +11,11 @@ const WrapperProgress = () => {
 
 const styles = {
   center: {
-    height: '10vh',
+    height: '80vh',
     width: '100vw',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center', 
-    paddingBottom: '33vh',
   },
 };
 
