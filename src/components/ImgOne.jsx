@@ -3,7 +3,7 @@ import cmngSoon from '../assets/bw1.jpg'
 import { useSpring, animated } from 'react-spring';
 import { useDrag } from '@use-gesture/react';
 
-function ImgCntnr() {
+function ImgCntnrOne() {
   const imgPos = useSpring({x: -50 , y: -350})
   const bindImgPos = useDrag((params) => {
     imgPos.x.set(params.offset[0]);
@@ -19,4 +19,4 @@ function ImgCntnr() {
   );
 }
 
-export default ImgCntnr;
+export default ImgCntnrOne;
