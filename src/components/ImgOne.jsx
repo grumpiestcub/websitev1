@@ -15,7 +15,6 @@ function ImgCntnr() {
         x: imgPos.x,
     }}>
         <img className='boi' src={cmngSoon} alt="the man himself"/>
-        move me
     </animated.div>
   );
 }
