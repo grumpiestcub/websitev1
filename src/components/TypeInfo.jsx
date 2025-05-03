@@ -7,7 +7,7 @@ function TypeInfo() {
       <div className='container'>
         <div className='type-writer-test'>
           <TypeWriter options={{
-            strings: ['// a grumpy newsletter // vol.1 coming soon // pictures // music // art // and more //'],
+            strings: ['// a grumpy newsletter // vol.1 // pictures // music // art // and more //'],
             autoStart: true, loop: true,}} 
           />
         </div>
