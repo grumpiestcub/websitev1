@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring';
 import { useDrag } from '@use-gesture/react';
 
 function ImgCntnrOne() {
-  const imgPos = useSpring({x: -50 , y: -350})
+  const imgPos = useSpring({x: 0 , y: 0})
   const bindImgPos = useDrag((params) => {
     imgPos.x.set(params.offset[0]);
     imgPos.y.set(params.offset[1])
