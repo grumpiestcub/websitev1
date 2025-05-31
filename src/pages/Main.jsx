@@ -4,13 +4,11 @@ import '../css/index.css'
 import Soon from '../components/Soon.jsx'
 import TypeInfo from '../components/TypeInfo.jsx'
 import ImgCntnrOne from '../components/ImgOne.jsx'
-import MusicInfo from '../components/MusicInfo.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Soon />
     <TypeInfo />
     <ImgCntnrOne />
-    <MusicInfo />
   </StrictMode>,
 ) 
