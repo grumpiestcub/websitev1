@@ -5,7 +5,7 @@ import Soon from '../components/Soon.jsx'
 import TypeInfo from '../components/TypeInfo.jsx'
 import ImgCntnrOne from '../components/ImgOne.jsx'
 
-createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('home')).render(
   <StrictMode>
     <Soon />
     <TypeInfo />

@@ -1,16 +1,16 @@
-import React from 'react';
 import cmngSoon from '../assets/bw1.jpg'
 import { useSpring, animated } from 'react-spring';
 import { useDrag } from '@use-gesture/react';
 
+
 function ImgCntnrOne() {
-  const imgPos = useSpring({x: -100 , y: -400})
+  const imgPos = useSpring({x: 0, y: 0})
   const bindImgPos = useDrag((params) => {
     imgPos.x.set(params.offset[0]);
     imgPos.y.set(params.offset[1])
   });
   return (
-    <animated.div {...bindImgPos()} className='container' style={{
+    <animated.div {...bindImgPos()} className='imgContainer1' style={{
         y: imgPos.y,
         x: imgPos.x,
     }}>
