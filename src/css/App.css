@@ -43,9 +43,12 @@
 }
 
 .pageLinks {
-  display: grid;
-  grid-template-columns: repeat(6,1fr);
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: .5rem;
+  left: 40%;
 }
 
 img {
