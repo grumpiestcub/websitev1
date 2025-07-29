@@ -1,9 +1,8 @@
 import '../css/App.css';
 import { useSpring, animated } from 'react-spring';
 import { useDrag } from '@use-gesture/react';
-//want to make something with animated ascii here for music page with links to bandcamp, soundcloud, spotify, etc
 
-function BandcampInfo() {
+function SoundInfo() {
     const musicPos = useSpring({x:0,y:0})
     const bindMusicPos = useDrag((params) => {
         musicPos.x.set(params.offset[0]);
@@ -11,11 +10,11 @@ function BandcampInfo() {
     });
     return (
         <>
-        <animated.div {...bindMusicPos()} className='bandContainer' style={{
+        <animated.div {...bindMusicPos()} className='soundContainer' style={{
             y: musicPos.y,
             x: musicPos.x,
         }}>
-            <a href="https://grumpiestcub.bandcamp.com/">bandcamp</a>
+            <a href="https://soundcloud.com/grumpiestcub">soundcloud</a>
         </animated.div>
         </>
     )
@@ -23,4 +22,4 @@ function BandcampInfo() {
 
 
 
-export default BandcampInfo
+export default SoundInfo
