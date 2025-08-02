@@ -50,6 +50,9 @@
   padding: .5rem;
   left: 40%;
 }
+div {
+  padding: 10px;
+}
 
 img {
   max-width: 350px;
