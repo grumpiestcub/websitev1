@@ -14,7 +14,7 @@ function SoundInfo() {
             y: musicPos.y,
             x: musicPos.x,
         }}>
-            <a href="https://soundcloud.com/grumpiestcub">soundcloud</a>
+            <a href="https://soundcloud.com/grumpiestcub" target="_blank">soundcloud</a>
         </animated.div>
         </>
     )

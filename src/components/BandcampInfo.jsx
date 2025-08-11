@@ -15,7 +15,7 @@ function BandcampInfo() {
             y: musicPos.y,
             x: musicPos.x,
         }}>
-            <a href="https://grumpiestcub.bandcamp.com/">bandcamp</a>
+            <a href="https://grumpiestcub.bandcamp.com/" target="_blank">bandcamp</a>
         </animated.div>
         </>
     )
