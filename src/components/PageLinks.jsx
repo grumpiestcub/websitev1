@@ -24,6 +24,7 @@ function PageLinks() {
     <a href="index.html">home{isHome && "(you're here)"}</a>
     //
     <a href="music.html">music{isMusic && "(you're here)"}</a>
+    //
     </animated.div>
  )
 }
