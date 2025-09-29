@@ -4,7 +4,7 @@ import '../css/index.css'
 import BandcampInfo from '../components/BandcampInfo'
 import PageLinks from '../components/PageLinks'
 import SoundInfo from '../components/SoundInfo'
-import NowPlayingComponent from "../components/NowPlayingComponent.jsx";
+import NowPlayingComponent from "../components/NowPlaying.jsx";
 
 createRoot(document.getElementById('music')).render(
   <StrictMode>
