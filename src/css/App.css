@@ -62,12 +62,10 @@
 }
 
 .pageLinks {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: block;
     text-align: center;
-    padding: 0.5rem;
-    width: auto;
+    padding: 0.5rem 1rem;
+    width: fit-content;
     margin: 1rem auto;
 }
 
@@ -103,10 +101,7 @@ img {
     }
 
     .pageLinks {
-        position: relative;
-        left: 0;
-        transform: none;
-        width: 100%;
+        width: fit-content;
         margin: 1rem auto;
     }
 
