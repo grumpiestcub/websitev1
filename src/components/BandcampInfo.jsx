@@ -18,7 +18,7 @@ function BandcampInfo() {
 
     try {
       e.currentTarget.setPointerCapture(e.pointerId);
-    } catch (err) {
+    } catch {
       // Pointer capture may fail on some devices
     }
 
