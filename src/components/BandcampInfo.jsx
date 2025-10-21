@@ -7,11 +7,14 @@ function BandcampInfo() {
   const dragStart = useRef({ x: 0, y: 0 });
   const startPos = useRef({ x: 0, y: 0 });
   const animationIdRef = useRef(0);
+  const hasMoved = useRef(false);
 
   const handlePointerDown = (e) => {
+    if (e.target.tagName === "A") return; // Don't prevent default on links
     e.preventDefault();
     e.currentTarget.setPointerCapture(e.pointerId);
     setIsDragging(true);
+    hasMoved.current = false;
     dragStart.current = {
       x: e.clientX,
       y: e.clientY,
@@ -20,9 +23,17 @@ function BandcampInfo() {
   };
 
   const updatePosition = (e) => {
+    const dx = e.clientX - dragStart.current.x;
+    const dy = e.clientY - dragStart.current.y;
+
+    // Check if moved more than 5px (threshold for drag vs click)
+    if (Math.abs(dx) > 5 || Math.abs(dy) > 5) {
+      hasMoved.current = true;
+    }
+
     setPosition({
-      x: startPos.current.x + (e.clientX - dragStart.current.x),
-      y: startPos.current.y + (e.clientY - dragStart.current.y),
+      x: startPos.current.x + dx,
+      y: startPos.current.y + dy,
     });
   };
 
@@ -35,11 +46,16 @@ function BandcampInfo() {
     });
   };
 
-  const handlePointerUp = () => {
+  const handlePointerUp = (e) => {
     setIsDragging(false);
     if (animationIdRef.current) {
       cancelAnimationFrame(animationIdRef.current);
       animationIdRef.current = 0;
+    }
+
+    // If we didn't move, allow the click to go through
+    if (!hasMoved.current && e.target.tagName === "A") {
+      e.target.click();
     }
   };
   return (
