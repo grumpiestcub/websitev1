@@ -1,26 +1,65 @@
-import '../css/App.css';
-import { useSpring, animated } from 'react-spring';
-import { useDrag } from '@use-gesture/react';
-//want to make something with animated ascii here for music page with links to bandcamp, soundcloud, spotify, etc
+import { useState, useRef } from "react";
+import "../css/App.css";
 
 function BandcampInfo() {
-    const musicPos = useSpring({x:0,y:0})
-    const bindMusicPos = useDrag((params) => {
-        musicPos.x.set(params.offset[0]);
-        musicPos.y.set(params.offset[1])
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStart = useRef({ x: 0, y: 0 });
+  const startPos = useRef({ x: 0, y: 0 });
+  const animationIdRef = useRef(0);
+
+  const handlePointerDown = (e) => {
+    e.preventDefault();
+    e.currentTarget.setPointerCapture(e.pointerId);
+    setIsDragging(true);
+    dragStart.current = {
+      x: e.clientX,
+      y: e.clientY,
+    };
+    startPos.current = { ...position };
+  };
+
+  const updatePosition = (e) => {
+    setPosition({
+      x: startPos.current.x + (e.clientX - dragStart.current.x),
+      y: startPos.current.y + (e.clientY - dragStart.current.y),
     });
-    return (
-        <>
-        <animated.div {...bindMusicPos()} className='bandContainer' style={{
-            y: musicPos.y,
-            x: musicPos.x,
-        }}>
-            <a href="https://grumpiestcub.bandcamp.com/" target="_blank">bandcamp</a>
-        </animated.div>
-        </>
-    )
+  };
+
+  const handlePointerMove = (e) => {
+    if (!isDragging) return;
+    if (animationIdRef.current) return;
+    animationIdRef.current = requestAnimationFrame(() => {
+      animationIdRef.current = 0;
+      updatePosition(e);
+    });
+  };
+
+  const handlePointerUp = () => {
+    setIsDragging(false);
+    if (animationIdRef.current) {
+      cancelAnimationFrame(animationIdRef.current);
+      animationIdRef.current = 0;
+    }
+  };
+  return (
+    <>
+      <div
+        className="bandContainer"
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        style={{
+          transform: `translate(${position.x}px, ${position.y}px)`,
+          cursor: isDragging ? "grabbing" : "grab",
+        }}
+      >
+        <a href="https://grumpiestcub.bandcamp.com/" target="_blank">
+          bandcamp
+        </a>
+      </div>
+    </>
+  );
 }
 
-
-
-export default BandcampInfo
+export default BandcampInfo;

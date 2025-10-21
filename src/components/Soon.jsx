@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import TypeWriter from "typewriter-effect";
 import "../css/App.css";
 
 function Soon() {
@@ -53,7 +54,30 @@ function Soon() {
         cursor: isDragging ? "grabbing" : "grab",
       }}
     >
-      coming soon
+      <pre>
+        <TypeWriter
+          options={{
+            strings: [
+              `╔══════════════════════════════╗
+║ TERMINAL v0.9.6 // ACTIVE    ║
+╠══════════════════════════════╣
+║    ░▒▓█► CRYPTEX ◄█▓▒░       ║
+║    >> ZONES: 1-9-0           ║
+║    >> HEX: 0xA████           ║
+║      [████████░] 90%         ║
+║                              ║
+║        ▓▓▓ SOON ▓▓▓          ║
+╚══════════════════════════════╝
+user asked the terminal: are you real?
+terminal asked back: are you?`,
+            ],
+            autoStart: true,
+            loop: true,
+            delay: 20,
+            pauseFor: 2500,
+          }}
+        />
+      </pre>
     </div>
   );
 }

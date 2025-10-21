@@ -25,25 +25,37 @@
 
 .imgContainer1 {
     position: absolute;
-    top: 55%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.soonContainer,
+.soonContainer {
+    position: absolute;
+    top: 35%;
+    left: 5%;
+}
+
 .bandContainer {
     position: absolute;
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.soonContainer pre {
+    margin: 0;
 }
 
 .typeContainer,
 .soundContainer {
     position: absolute;
-    top: 35%;
+    top: 25%;
     left: 30%;
     transform: translate(-50%, -50%);
     text-align: center;

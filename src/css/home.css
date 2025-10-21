@@ -1,30 +1,44 @@
 body {
     margin: 0;
     padding: 20px;
-    background: #000;
+    background: #014f9d;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: monospace;
 }
-
 .retro-screen {
-    width: 640px;
-    height: 480px;
-    background: #317873;
-    border: 8px solid #333;
-    position: relative;
+    width: 800px;
+    height: 778px;
+    position: fixed;
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
     image-rendering: crisp-edges;
 }
 
+.retro-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/assets/tv.png") !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    pointer-events: none;
+    z-index: 1000;
+    mix-blend-mode: normal !important;
+    opacity: 1 !important;
+}
+
 .timestamp,
 .current-time {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 160px;
+    left: 100px;
     color: #eef5db;
     font-size: 14px;
     font-weight: bold;
@@ -32,8 +46,8 @@ body {
 
 .keycode {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 160px;
+    right: 100px;
     color: #eef5db;
     font-size: 14px;
     font-weight: bold;
@@ -41,53 +55,56 @@ body {
 
 .ascii-knight {
     position: absolute;
-    left: 60px;
-    top: 80px;
+    left: 80px;
+    top: 140px;
     color: #ffffff;
     font-family: monospace;
     font-size: 14px;
     line-height: 1.1;
     font-weight: bold;
     white-space: pre;
-    text-shadow: 1px 1px 0px #000;
+    text-shadow: 1px 1px 0 #000;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
 }
 
 .text-container {
     position: absolute;
-    right: 80px;
-    top: 120px;
-    color: #ffff00;
+    right: 150px;
+    top: 200px;
     font-family: "Courier New", monospace;
+}
+
+/* Shared styles for text elements */
+.keep-wise,
+.with-text {
+    font-weight: bold;
+    text-shadow: 2px 2px 0 #000;
+    text-transform: lowercase;
+    color: #ffffff;
 }
 
 .keep-wise {
     font-size: 42px;
-    font-weight: bold;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 0px #000;
-    text-transform: lowercase;
-    color: #ffffff;
 }
 
 .with-text {
     font-size: 28px;
-    font-weight: bold;
     margin-bottom: 15px;
     text-align: center;
-    text-shadow: 2px 2px 0px #000;
-    text-transform: lowercase;
-    color: #ffffff;
 }
 
 .grumpiestcub {
     font-size: 38px;
     font-weight: 900;
-    color: #d4744e;
+    color: #ffff00;
     text-shadow:
-        3px 3px 0px #000,
-        -2px -2px 0px #000,
-        2px -2px 0px #000,
-        -2px 2px 0px #000;
+        3px 3px 0 #000,
+        -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000;
     letter-spacing: 1px;
     text-transform: lowercase;
     font-family: "Impact", "Arial Black", "Helvetica", sans-serif;
@@ -96,36 +113,13 @@ body {
     -webkit-text-stroke: 1px #000;
 }
 
-/* Pixelated effect and scanlines */
-.ascii-knight {
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
-    image-rendering: crisp-edges;
-}
-
-/* Additional CRT glow effect */
-.retro-screen::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: radial-gradient(
-        ellipse at center,
-        rgba(49, 120, 115, 0.1) 0%,
-        transparent 70%
-    );
-    pointer-events: none;
-}
-
 .ticker-box {
     position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 180px;
+    width: 600px;
     height: 40px;
-    background: #000000;
     overflow: hidden;
 }
 
@@ -133,7 +127,7 @@ body {
 .ticker-text {
     position: absolute;
     white-space: nowrap;
-    color: #ffff00;
+    color: white;
     font-family: "Courier New", monospace;
     font-size: 16px;
     font-weight: bold;
@@ -153,4 +147,72 @@ body {
 
 #current-time {
     padding-left: 90px;
+}
+
+.links {
+    position: fixed;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    z-index: 10;
+    color: #eef5db;
+}
+
+.links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.links a:visited {
+    color: #ffffff;
+}
+
+.links a:hover {
+    color: #eef5db;
+    text-decoration: underline;
+}
+
+.crt {
+    background-color: #014f9d;
+    text-shadow:
+        0 0 0.2em currentColor,
+        1px 1px rgba(255, 0, 255, 0.5),
+        -1px -1px rgba(0, 255, 255, 0.4);
+    position: relative;
+}
+
+.crt::before,
+.crt::after {
+    content: "";
+    transform: translateZ(0);
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.crt::before {
+    background: repeating-linear-gradient(
+        transparent 0,
+        rgba(0, 0, 0, 0.1) 2px,
+        transparent 4px
+    );
+}
+
+.crt::after {
+    background: repeating-linear-gradient(
+        90deg,
+        transparent 0,
+        rgba(0, 0, 0, 0.05) 1px,
+        transparent 2px
+    );
 }

@@ -58,7 +58,7 @@ function TypeInfo() {
       <TypeWriter
         options={{
           strings: [
-            "// a grumpy newsletter // vol.1 // pictures // music // art // and more //",
+            "// a grumpy newsletter // pictures // music // art // and more //",
           ],
           autoStart: true,
           loop: true,

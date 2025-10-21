@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import cmngSoon from "../assets/bw1.jpg";
+import cmngSoon from "../assets/bw2.jpg";
 
 function ImgCntnrOne() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -58,7 +58,7 @@ function ImgCntnrOne() {
         draggable={false}
         className="boi"
         src={cmngSoon}
-        alt="the man himself"
+        alt="????"
         onDragStart={(e) => e.preventDefault()}
       />
     </div>
