@@ -1,166 +1,27 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keep Wise with GrumpiestCub</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            background: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: monospace;
-        }
-        
-        .retro-screen {
-            width: 640px;
-            height: 480px;
-            background: #317873;
-            border: 8px solid #333;
-            position: relative;
-            image-rendering: pixelated;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Keep Wise with GrumpiestCub</title>
+        <link rel="stylesheet" href="src/css/home.css" />
+    </head>
+    <body>
+        <div class="retro-screen crt">
+            <div class="current-time" id="current-time">
+                <script>
+                    let currentTime = document.getElementById("current-time");
 
-        .timestamp, .current-time {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            color: #eef5db;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        
-        .keycode {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            color: #eef5db;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        
-        .ascii-knight {
-            position: absolute;
-            left: 60px;
-            top: 80px;
-            color: #ffffff;
-            font-family: monospace;
-            font-size: 14px;
-            line-height: 1.1;
-            font-weight: bold;
-            white-space: pre;
-            text-shadow: 1px 1px 0px #000;
-        }
-        
-        .text-container {
-            position: absolute;
-            right: 80px;
-            top: 120px;
-            color: #ffff00;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .keep-wise {
-            font-size: 42px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 0px #000;
-            text-transform: lowercase;
-            color: #ffffff;
-        }
-        
-        .with-text {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-align: center;
-            text-shadow: 2px 2px 0px #000;
-            text-transform: lowercase;
-            color: #ffffff;
-        }
-        
-        .grumpiestcub {
-            font-size: 38px;
-            font-weight: 900;
-            color: #d4744e;
-            text-shadow: 3px 3px 0px #000, -2px -2px 0px #000, 2px -2px 0px #000, -2px 2px 0px #000;
-            letter-spacing: 1px;
-            text-transform: lowercase;
-            font-family: 'Impact', 'Arial Black', 'Helvetica', sans-serif;
-            text-rendering: optimizeSpeed;
-            font-stretch: condensed;
-            -webkit-text-stroke: 1px #000;
-        }
-        
-        /* Pixelated effect and scanlines */
-        .ascii-knight {
-            image-rendering: pixelated;
-            image-rendering: -moz-crisp-edges;
-            image-rendering: crisp-edges;
-        }
-        
-        /* Additional CRT glow effect */
-        .retro-screen::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: radial-gradient(ellipse at center, rgba(49,120,115,0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-        
-        /* Ticker text animation */
-        .ticker-text {
-            position: absolute;
-            white-space: nowrap;
-            color: #ffff00;
-            font-family: 'Courier New', monospace;
-            font-size: 16px;
-            font-weight: bold;
-            line-height: 40px;
-            animation: scroll-left 30s linear infinite;
-            text-transform: uppercase;
-        }
-        
-        @keyframes scroll-left {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        #current-time {
-            padding-left: 90px;
-        }
-    </style>
-</head>
-<body>
-    <div class="retro-screen crt">
-        <div class="current-time" id="current-time">
-            <script>
-                let currentTime = document.getElementById("current-time");
-
-                setInterval(() =>{
-                    let d = new Date();
-                    currentTime.innerHTML = d.toLocaleTimeString()
-                }, 1000)
-            </script>
+                    setInterval(() => {
+                        let d = new Date();
+                        currentTime.innerHTML = d.toLocaleTimeString();
+                    }, 1000);
+                </script>
             </div>
-            <div class="current-time">08.15.94 | </div>
-        <div class="keycode">KEY:0x7A3F9C</div>
-        
-        <div class="ascii-knight">
-            <pre>       
+            <div class="current-time">08.15.94 |</div>
+            <div class="keycode">KEY:0x7A3F9C</div>
+            <div class="ascii-knight">
+                <pre>
        ,....,
       ,::::::>
      ,::/^\"``.
@@ -178,17 +39,56 @@
     ('--......--')
     /'--......--'\
     `"--......--"
-            </pre>
+            </pre
+                >
+            </div>
+            <div class="ticker-box">
+                <div class="ticker-text">
+                    RAIN TODAY WITH SCATTERED STORMS • CHESS TOURNAMENT TONIGHT
+                    7PM • NEW TAPE ON THE WAY FROM GRUMPIESTCUB • NEWS AT 11 •
+                    WEATHER UPDATE: PARTLY CLOUDY TOMORROW •
+                </div>
+            </div>
+            <div class="text-container">
+                <div class="keep-wise">KEEP WISE</div>
+                <div class="with-text">....WITH</div>
+                <div class="grumpiestcub">GRUMPIESTCUB</div>
+            </div>
         </div>
-        <div style="position: absolute; left: 0; bottom: 0; width: 100%; height: 40px; background: #000000; overflow: hidden;">
-            <div class="ticker-text">RAIN TODAY WITH SCATTERED STORMS • CHESS TOURNAMENT TONIGHT 7PM • NEW TAPE ON THE WAY FROM GRUMPIESTCUB • NEWS AT 11 • WEATHER UPDATE: PARTLY CLOUDY TOMORROW • </div>
-        </div>
-        
-        <div class="text-container">
-            <div class="keep-wise">KEEP WISE</div>
-            <div class="with-text">....WITH</div>
-            <div class="grumpiestcub">GRUMPIESTCUB</div>
-        </div>
-    </div>
-</body>
+    </body>
 </html>
+<!--
+                    ╭─────────────────────────────────────────────────────────╮
+                    │                                                         │
+                    │  ╭─────────────────────────────────────────────────╮    │
+                    │  │ }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}│    │
+                    │  │{{            +             +                  {{│    │
+                    │  │}}   |                *           o     +      }}│    │
+                    │  │{{  -O-    o               .               .   {{│    │
+                    │  │}}   |                    _,.-----.,_       o  }}│    │
+                    │  │{{           +    *    .-'.         .'-.   -O- {{│    │
+                    │  │}}      *            .'.-'   .---.   `'.'.     }}│    │
+                    │  │{{ .                /_.-'   /     \   .'-.\    {{│    │
+                    │  │}}         ' -=*<  |-._.-  |   @   |   '-._| + }}│    │
+                    │  │{{ -- )--           \`-.    \     /    .-'/    {{│    │
+                    │  │}}       *     +     `.'.    '---'    .'.'    +}}│    │
+                    │  │{{                  .  '-._         _.-'  .    {{│    │
+                    │  │}}         |               `~~~~~~~`       - --}}│    │
+                    │  │{{   o    -O-      *   .     >*=-         *    {{│    │
+                    │  │}}         |                      +         .  }}│    │
+                    │  │{{           .     @      o                    {{│    │
+                    │  │}}       o                          *          }}│    │
+                    │  │{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{│    │
+                    │  │                                                 │    │
+                    │  │                                                 │    │
+                    │  ╰─────────────────────────────────────────────────╯    │
+                    │                                                         │
+                    │    ◉  ╭───╮  ╭───╮  ╭───╮    ╭─────────╮                │
+                    │       │   │  │ - │  │ + │    │ on/off  │               │
+                    │       ╰───╯  ╰───╯  ╰───╯    ╰─────────╯               │
+                    │                                                        │
+                ╭───┴────────────────────────────────────────────────────────┴-───╮
+                │                                                                 │
+                │                        █▓▒░ oh ░▒▓█                             │
+                │                                                                 │
+                ╰─────────────────────────────────────────────────────────────────╯ -->

@@ -1,67 +1,74 @@
 :root {
-  font-family: monospace;
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
 }
 
-.imgContainer1, .soonContainer, .typeContainer, .soundContainer, .pageLinks, .bandContainer {
-  position: relative;
-  background-image: linear-gradient(#0D2289, #06093B);
-  border: 1px solid #c6c6c6;
-  border-radius: 8px;
-  box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
-  margin: 1rem;
-  padding: 5px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  overflow: hidden;
+.imgContainer1,
+.soonContainer,
+.typeContainer,
+.soundContainer,
+.pageLinks,
+.bandContainer {
+    position: relative;
+    background-image: linear-gradient(#0d2289, #06093b);
+    border: 1px solid #c6c6c6;
+    border-radius: 8px;
+    box-shadow: inset 0px 0px 2px 2px rgba(0, 0, 0, 0.3);
+    margin: 1rem;
+    padding: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
 }
 
 .imgContainer1 {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-.soonContainer, .bandContainer {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.soonContainer,
+.bandContainer {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
-.typeContainer, .soundContainer {
-  position: absolute;
-  top: 35%;
-  left: 30%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+.typeContainer,
+.soundContainer {
+    position: absolute;
+    top: 35%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 }
 
 .pageLinks {
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: .5rem;
-  left: 40%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0.5rem;
+    left: 40%;
 }
 
 img {
-  max-width: 350px;
-  max-height: 350px;
-  display: flex;
-  pointer-events: none;
+    max-width: 350px;
+    max-height: 350px;
+    display: flex;
+    pointer-events: auto;
 }
 
 .ascii-pawn {
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
-  image-rendering: crisp-edges;
-  max-width: 100px;
-  max-height: 100px;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+    max-width: 100px;
+    max-height: 100px;
 }

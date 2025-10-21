@@ -9,7 +9,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        music: resolve(__dirname, 'music.html')
+        home: resolve(__dirname, 'home.html'),
+        music: resolve(__dirname, 'music.html'),
+        sigil: resolve(__dirname, 'sigil.html')
       }
     }
   }

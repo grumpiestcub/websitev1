@@ -1,0 +1,156 @@
+body {
+    margin: 0;
+    padding: 20px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: monospace;
+}
+
+.retro-screen {
+    width: 640px;
+    height: 480px;
+    background: #317873;
+    border: 8px solid #333;
+    position: relative;
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+.timestamp,
+.current-time {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #eef5db;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.keycode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #eef5db;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.ascii-knight {
+    position: absolute;
+    left: 60px;
+    top: 80px;
+    color: #ffffff;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.1;
+    font-weight: bold;
+    white-space: pre;
+    text-shadow: 1px 1px 0px #000;
+}
+
+.text-container {
+    position: absolute;
+    right: 80px;
+    top: 120px;
+    color: #ffff00;
+    font-family: "Courier New", monospace;
+}
+
+.keep-wise {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px #000;
+    text-transform: lowercase;
+    color: #ffffff;
+}
+
+.with-text {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    text-shadow: 2px 2px 0px #000;
+    text-transform: lowercase;
+    color: #ffffff;
+}
+
+.grumpiestcub {
+    font-size: 38px;
+    font-weight: 900;
+    color: #d4744e;
+    text-shadow:
+        3px 3px 0px #000,
+        -2px -2px 0px #000,
+        2px -2px 0px #000,
+        -2px 2px 0px #000;
+    letter-spacing: 1px;
+    text-transform: lowercase;
+    font-family: "Impact", "Arial Black", "Helvetica", sans-serif;
+    text-rendering: optimizeSpeed;
+    font-stretch: condensed;
+    -webkit-text-stroke: 1px #000;
+}
+
+/* Pixelated effect and scanlines */
+.ascii-knight {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
+/* Additional CRT glow effect */
+.retro-screen::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(49, 120, 115, 0.1) 0%,
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.ticker-box {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background: #000000;
+    overflow: hidden;
+}
+
+/* Ticker text animation */
+.ticker-text {
+    position: absolute;
+    white-space: nowrap;
+    color: #ffff00;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    animation: scroll-left 25s linear infinite;
+    text-transform: uppercase;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+#current-time {
+    padding-left: 90px;
+}
