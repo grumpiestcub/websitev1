@@ -9,7 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        home: resolve(__dirname, "home.html"),
+        about: resolve(__dirname, "about.html"),
         music: resolve(__dirname, "music.html"),
         sigil: resolve(__dirname, "sigil.html"),
       },

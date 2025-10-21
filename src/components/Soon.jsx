@@ -65,11 +65,11 @@ function Soon() {
 ║    >> ZONES: 1-9-0           ║
 ║    >> HEX: 0xA████           ║
 ║      [████████░] 90%         ║
-║                              ║
+║     user: are you real?      ║
+║     terminal: are you?       ║
 ║        ▓▓▓ SOON ▓▓▓          ║
 ╚══════════════════════════════╝
-user asked the terminal: are you real?
-terminal asked back: are you?`,
+`,
             ],
             autoStart: true,
             loop: true,
