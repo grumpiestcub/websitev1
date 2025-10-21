@@ -21,6 +21,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     overflow: hidden;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .imgContainer1 {

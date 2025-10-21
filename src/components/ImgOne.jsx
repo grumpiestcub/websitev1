@@ -9,8 +9,17 @@ function ImgCntnrOne() {
   const animationIdRef = useRef(0);
 
   const handlePointerDown = (e) => {
+    if (!e.isPrimary) return; // Only handle primary pointer
+
     e.preventDefault();
-    e.currentTarget.setPointerCapture(e.pointerId);
+    e.stopPropagation();
+
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch (err) {
+      // Pointer capture may fail on some devices
+    }
+
     setIsDragging(true);
     dragStart.current = {
       x: e.clientX,

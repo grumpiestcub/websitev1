@@ -11,8 +11,17 @@ function BandcampInfo() {
 
   const handlePointerDown = (e) => {
     if (e.target.tagName === "A") return; // Don't prevent default on links
+    if (!e.isPrimary) return; // Only handle primary pointer
+
     e.preventDefault();
-    e.currentTarget.setPointerCapture(e.pointerId);
+    e.stopPropagation();
+
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch (err) {
+      // Pointer capture may fail on some devices
+    }
+
     setIsDragging(true);
     hasMoved.current = false;
     dragStart.current = {

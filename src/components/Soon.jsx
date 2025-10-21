@@ -10,8 +10,18 @@ function Soon() {
   const animationIdRef = useRef(0);
 
   const handlePointerDown = (e) => {
+    // Only handle primary pointer (left mouse button or first touch)
+    if (!e.isPrimary) return;
+
     e.preventDefault();
-    e.currentTarget.setPointerCapture(e.pointerId);
+    e.stopPropagation();
+
+    try {
+      e.currentTarget.setPointerCapture(e.pointerId);
+    } catch (err) {
+      // Pointer capture may fail on some devices, continue anyway
+    }
+
     setIsDragging(true);
     dragStart.current = {
       x: e.clientX,
