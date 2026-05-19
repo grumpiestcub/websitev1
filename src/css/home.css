@@ -33,3 +33,16 @@ footer {
 .footer {
     max-width: 100px;
 }
+
+.left {
+    width: 25%;
+}
+
+.main {
+    margin-left: 25%;
+}
+
+.head {
+    position: absolute;
+    top: 50px;
+}
