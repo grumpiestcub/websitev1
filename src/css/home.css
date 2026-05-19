@@ -1,6 +1,8 @@
 body {
     font-family: monospace;
     font-weight: lighter;
+    padding-left: 1em;
+    padding-top: 0.1em;
 }
 
 h1 {
@@ -25,6 +27,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    padding-bottom: 0.5em;
 }
 
 .footer {
