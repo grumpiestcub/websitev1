@@ -1,8 +1,8 @@
 body {
     font-family: monospace;
     font-weight: lighter;
-    padding-left: 1em;
     padding-top: 0.1em;
+    padding-left: 1em;
 }
 
 h1 {
@@ -30,12 +30,11 @@ footer {
     padding-bottom: 0.5em;
 }
 
-.footer {
-    max-width: 100px;
-}
 
-.left {
+
+.left footer {
     width: 25%;
+    margin-left: 1em;
 }
 
 .main {
