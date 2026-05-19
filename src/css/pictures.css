@@ -31,8 +31,11 @@ ul.gallery > li img {
 }
 
 p {
-  text-align: center;
-  margin: 0.5em;
+  text-align: left;
+  margin-left: 2em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 20px;
 }
 
 a:link {
